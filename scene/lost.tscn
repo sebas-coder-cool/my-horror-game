@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://c6344qpfqi3do"]
+
+[ext_resource type="Script" uid="uid://dodc8h17t3ld5" path="res://scene/lost.gd" id="1_qcaqc"]
+[ext_resource type="Texture2D" uid="uid://da8boycrqw5re" path="res://assets/2pnga390b373pzrz.jpg" id="2_qcaqc"]
+[ext_resource type="Script" uid="uid://otxehjxlvk75" path="res://label.gd" id="3_7vq3c"]
+[ext_resource type="Script" uid="uid://cnl3pp5eldc80" path="res://scene/coin_label_2.gd" id="4_qcaqc"]
+[ext_resource type="Texture2D" uid="uid://cs63d4k3y16au" path="res://addons/pixel_ui/icons/coin.png" id="4_qrcio"]
+[ext_resource type="Texture2D" uid="uid://yjw7p71vlhg6" path="res://addons/pixel_ui/icons/heart.png" id="6_7vq3c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkcmg"]
+atlas = ExtResource("2_qcaqc")
+region = Rect2(0, 0, 1080, 846.77966)
+filter_clip = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5iys"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ee4bf"]
+bg_color = Color(0.06100855, 0.06100855, 0.06100855, 0.51000005)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojbw0"]
+bg_color = Color(0.23716661, 0.0029745768, 0.4733473, 1)
+
+[node name="Control" type="Control" unique_id=1183699450]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qcaqc")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1373256709]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -20.0
+offset_right = 1169.0
+offset_bottom = 826.0
+texture = SubResource("AtlasTexture_jkcmg")
+flip_h = true
+flip_v = true
+
+[node name="youdidit" type="LineEdit" parent="." unique_id=907667552]
+layout_mode = 0
+offset_left = 293.0
+offset_top = 28.0
+offset_right = 807.0
+offset_bottom = 173.0
+theme_override_colors/font_color = Color(0.73164046, 0.72171384, 1, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_r5iys")
+text = "you lost😒"
+expand_to_text_length = true
+
+[node name="retry" type="Button" parent="." unique_id=1465622648]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 216.0
+offset_right = 715.0
+offset_bottom = 289.0
+theme_override_font_sizes/font_size = 25
+text = "retry (-1 live)"
+
+[node name="back to start" type="Button" parent="." unique_id=1596997958]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 299.0
+offset_right = 716.0
+offset_bottom = 372.0
+theme_override_font_sizes/font_size = 25
+text = "back to start"
+
+[node name="shop" type="Button" parent="." unique_id=1556292349]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 384.0
+offset_right = 717.0
+offset_bottom = 457.0
+theme_override_font_sizes/font_size = 25
+text = "shop"
+
+[node name="CoinLabel" type="Label" parent="." unique_id=418088908]
+layout_mode = 0
+offset_left = 1084.0
+offset_top = 14.0
+offset_right = 1149.0
+offset_bottom = 37.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ee4bf")
+horizontal_alignment = 2
+script = ExtResource("3_7vq3c")
+
+[node name="CoinLabel2" type="Label" parent="." unique_id=557341641]
+layout_mode = 0
+offset_left = 1084.0
+offset_top = 41.0
+offset_right = 1149.0
+offset_bottom = 64.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ee4bf")
+horizontal_alignment = 2
+script = ExtResource("4_qcaqc")
+
+[node name="Coin" type="Sprite2D" parent="." unique_id=1852960257]
+position = Vector2(1096, 25)
+texture = ExtResource("4_qrcio")
+
+[node name="Heart" type="Sprite2D" parent="." unique_id=531088619]
+position = Vector2(1097, 53)
+texture = ExtResource("6_7vq3c")
+
+[node name="PopupPanel" type="PopupPanel" parent="." unique_id=517759141]
+oversampling_override = 1.0
+position = Vector2i(450, 250)
+size = Vector2i(208, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ojbw0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel" unique_id=290057032]
+offset_right = 208.0
+offset_bottom = 100.0
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer" unique_id=1221039580]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "no more lifes"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PopupPanel/VBoxContainer" unique_id=225666733]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "close"
+
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="back to start" to="." method="_on_back_to_start_pressed"]
+[connection signal="pressed" from="shop" to="." method="_on_shop_pressed"]
+[connection signal="pressed" from="PopupPanel/VBoxContainer/Button" to="." method="_on_button_pressed"]

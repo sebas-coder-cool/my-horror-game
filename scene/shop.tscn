@@ -1,0 +1,197 @@
+[gd_scene format=3 uid="uid://dvdtlppona0om"]
+
+[ext_resource type="Texture2D" uid="uid://vhtis3g6m2nf" path="res://background/shop.jpeg" id="1_iuafe"]
+[ext_resource type="Script" uid="uid://ces3ppql0dbmc" path="res://scene/shop.gd" id="1_prb2b"]
+[ext_resource type="Texture2D" uid="uid://dqd2c2bc56wxo" path="res://shop items/100 coins.png" id="3_brg4d"]
+[ext_resource type="Texture2D" uid="uid://1xlutkgigu0t" path="res://shop items/Gouden spookkaart met extra leven_edited.png" id="3_tartn"]
+[ext_resource type="Texture2D" uid="uid://cbjspm8ducl44" path="res://shop items/50 coins.png" id="4_pd0vs"]
+[ext_resource type="Texture2D" uid="uid://c6ras8oc3cirx" path="res://shop items/speed_boost.png" id="5_prb2b"]
+[ext_resource type="Texture2D" uid="uid://cs63d4k3y16au" path="res://addons/pixel_ui/icons/coin.png" id="6_pd0vs"]
+[ext_resource type="Script" uid="uid://dj0cc5lvxvw32" path="res://scene/label.gd" id="7_prb2b"]
+[ext_resource type="Texture2D" uid="uid://br2rire22x6ib" path="res://addons/pixel_ui/icons/arrow_left.png" id="9_tartn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k1neq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyq3k"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4p3p6"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_phbgv"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pd0vs"]
+bg_color = Color(0.11489678, 0.11489683, 0.11489671, 0.3137255)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.04566046, 0.045980662, 0.1639604, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r5iys"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojbw0"]
+bg_color = Color(0.34986207, 0.22394302, 0.7028755, 1)
+
+[node name="shop" type="Control" unique_id=270988353]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_prb2b")
+
+[node name="Shop" type="Sprite2D" parent="." unique_id=1569165183]
+z_index = -1
+position = Vector2(576, 320)
+scale = Vector2(0.84643644, 0.84375006)
+texture = ExtResource("1_iuafe")
+
+[node name="item 1" type="Button" parent="." unique_id=727923269]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 85.0
+offset_right = 318.0
+offset_bottom = 325.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_k1neq")
+icon = ExtResource("3_tartn")
+expand_icon = true
+
+[node name="item 2" type="Button" parent="." unique_id=897758659]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 328.0
+offset_right = 616.0
+offset_bottom = 584.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_uyq3k")
+icon = ExtResource("3_brg4d")
+expand_icon = true
+
+[node name="item 3" type="Button" parent="." unique_id=1737259627]
+layout_mode = 0
+offset_left = 438.0
+offset_top = 87.0
+offset_right = 606.0
+offset_bottom = 327.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_4p3p6")
+icon = ExtResource("4_pd0vs")
+expand_icon = true
+
+[node name="item 4" type="Button" parent="." unique_id=1182045700]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 328.0
+offset_right = 328.0
+offset_bottom = 584.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_phbgv")
+icon = ExtResource("5_prb2b")
+expand_icon = true
+
+[node name="Label" type="Label" parent="." unique_id=1489077044]
+layout_mode = 0
+offset_left = 926.0
+offset_top = 541.0
+offset_right = 993.0
+offset_bottom = 569.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_pd0vs")
+horizontal_alignment = 2
+script = ExtResource("7_prb2b")
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=1932676565]
+layout_mode = 0
+offset_left = 886.0
+offset_top = 490.0
+offset_right = 1030.0
+offset_bottom = 548.0
+theme_override_colors/font_color = Color(0.41801724, 0.1937187, 0.72933525, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_r5iys")
+text = "coins"
+alignment = 1
+
+[node name="Coin3" type="Sprite2D" parent="." unique_id=1210253848]
+position = Vector2(938.00006, 555)
+scale = Vector2(1.625, 1.625)
+texture = ExtResource("6_pd0vs")
+
+[node name="PopupPanel" type="PopupPanel" parent="." unique_id=1080910550]
+oversampling_override = 1.0
+position = Vector2i(300, 260)
+size = Vector2i(200, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ojbw0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel" unique_id=431404261]
+offset_right = 200.0
+offset_bottom = 100.0
+alignment = 1
+
+[node name="Label" type="Label" parent="PopupPanel/VBoxContainer" unique_id=168500221]
+layout_mode = 2
+text = "not enough coins"
+horizontal_alignment = 1
+
+[node name="close" type="Button" parent="PopupPanel/VBoxContainer" unique_id=1660089575]
+layout_mode = 2
+text = "close"
+
+[node name="PopupPanel2" type="PopupPanel" parent="." unique_id=1662385042]
+oversampling_override = 1.0
+position = Vector2i(300, 260)
+size = Vector2i(200, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ojbw0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel2" unique_id=680721698]
+offset_right = 200.0
+offset_bottom = 100.0
+alignment = 1
+
+[node name="Label" type="Label" parent="PopupPanel2/VBoxContainer" unique_id=1867918279]
+layout_mode = 2
+text = "you have a new life!!"
+horizontal_alignment = 1
+
+[node name="close2" type="Button" parent="PopupPanel2/VBoxContainer" unique_id=172865943]
+layout_mode = 2
+text = "close"
+
+[node name="PopupPanel3" type="PopupPanel" parent="." unique_id=1627404089]
+oversampling_override = 1.0
+position = Vector2i(300, 260)
+size = Vector2i(200, 100)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ojbw0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupPanel3" unique_id=234806007]
+offset_right = 200.0
+offset_bottom = 100.0
+alignment = 1
+
+[node name="Label" type="Label" parent="PopupPanel3/VBoxContainer" unique_id=1382896911]
+layout_mode = 2
+text = "you have more speed!!"
+horizontal_alignment = 1
+
+[node name="close2" type="Button" parent="PopupPanel3/VBoxContainer" unique_id=1901517473]
+layout_mode = 2
+text = "close"
+
+[node name="back" type="Button" parent="." unique_id=1186485597]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 31.0
+offset_right = 98.0
+offset_bottom = 90.0
+icon = ExtResource("9_tartn")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="item 1" to="." method="_on_item_1_pressed"]
+[connection signal="pressed" from="item 2" to="." method="_on_item_2_pressed"]
+[connection signal="pressed" from="item 4" to="." method="_on_item_4_pressed"]
+[connection signal="pressed" from="PopupPanel/VBoxContainer/close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="PopupPanel2/VBoxContainer/close2" to="." method="_on_close_2_pressed"]
+[connection signal="pressed" from="PopupPanel3/VBoxContainer/close2" to="." method="_on_close_2_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

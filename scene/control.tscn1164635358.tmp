@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dm0nt4wbhcqxl"]
+
+[ext_resource type="Script" uid="uid://qpcklr1w1p6" path="res://scene/control.gd" id="1_mnow5"]
+[ext_resource type="Script" uid="uid://djequj7qlk0wv" path="res://scene/startbutton.gd" id="1_vrdfc"]
+
+[node name="Control" type="Control" unique_id=579631383]
+layout_mode = 3
+anchor_left = 0.42100003
+anchor_top = 0.43500003
+anchor_right = 0.597
+anchor_bottom = 0.836
+offset_left = -484.99203
+offset_top = -281.88004
+offset_right = 464.25598
+offset_bottom = 106.27197
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mnow5")
+
+[node name="Button" type="Button" parent="." unique_id=1129857369]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 486.0
+offset_top = 497.0
+offset_right = 683.0
+offset_bottom = 543.0
+text = "start"
+script = ExtResource("1_vrdfc")

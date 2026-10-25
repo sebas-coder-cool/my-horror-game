@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dm0nt4wbhcqxl"]
+
+[ext_resource type="Script" uid="uid://qpcklr1w1p6" path="res://scene/control.gd" id="1_mnow5"]
+[ext_resource type="Texture2D" uid="uid://p3r38qp6i5vu" path="res://background/start screen.jpg" id="2_mnow5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8g54p"]
+bg_color = Color(0.017631924, 0.023338508, 0.018532336, 1)
+
+[node name="Control" type="Control" unique_id=579631383]
+layout_mode = 3
+anchor_left = 0.42100003
+anchor_top = 0.43500003
+anchor_right = 0.597
+anchor_bottom = 0.836
+offset_left = -484.99203
+offset_top = -281.88004
+offset_right = 464.25598
+offset_bottom = 106.27197
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mnow5")
+
+[node name="StartScreen" type="Sprite2D" parent="." unique_id=140265116]
+z_index = -1
+position = Vector2(574.50006, 334.99997)
+scale = Vector2(0.30338544, 0.30648148)
+texture = ExtResource("2_mnow5")
+
+[node name="start game" type="Button" parent="." unique_id=1129857369]
+modulate = Color(8.665445, 3.6111531, 13.539833, 1)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 51.0
+offset_top = 111.0
+offset_right = 248.0
+offset_bottom = 157.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8g54p")
+text = "start"
+
+[node name="shop" type="Button" parent="." unique_id=1066734596]
+modulate = Color(8.665445, 3.6111531, 13.539833, 1)
+layout_mode = 1
+anchors_preset = -1
+offset_left = 51.0
+offset_top = 170.0
+offset_right = 248.0
+offset_bottom = 216.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8g54p")
+text = "shop"
+
+[connection signal="pressed" from="start game" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="start game" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="shop" to="." method="_on_shop_pressed"]
